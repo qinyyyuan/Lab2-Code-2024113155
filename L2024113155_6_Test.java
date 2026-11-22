@@ -48,7 +48,7 @@ class L2024113155_6_Test {
     }
 
     /**
-     * 测试目的：验证标准功能场景——多个清单存在子集关系时能正确筛除非子集清单。
+     * 测试目的：验证标准功能场景——多个清单存在子集关系时能正确筛除被其他清单包含的子集清单。
      * 测试用例（有效等价类：多重子集嵌套结构）：
      * 输入：[["leetcode","google","facebook"],["google","microsoft"],
      *        ["google","facebook"],["google"],["amazon"]]，
@@ -124,13 +124,13 @@ class L2024113155_6_Test {
     }
 
     /**
-     * 测试目的：验证子集判定的否定边界——两个清单长度相同但内容不同，
+     * 测试目的：验证子集判定的否定边界——两个清单长度相同，且部分元素重叠，
      * 互不为子集，均应保留。
      * 测试用例（边界值：互不为子集的等长清单）：
      * 输入：[["google","facebook"],["facebook","amazon"]]，期望输出：[0,1]。
      */
     @Test
-    void testEqualSizeDisjoint() {
+    void testEqualSizeWithPartialOverlap() {
         List<Integer> actual = solution.peopleIndexes(build(
                 new String[]{"google", "facebook"},
                 new String[]{"facebook", "amazon"}));
