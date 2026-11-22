@@ -63,7 +63,10 @@ class Solution6 {
                 if (i == j) {
                     continue;
                 }
-                isSub |= check(favoriteCompanies, i, j);
+                if (check(favoriteCompanies, i, j)) {
+                    isSub = true;
+                    break;
+                }
             }
             if (!isSub) {
                 ans.add(i);
